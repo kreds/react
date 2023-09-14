@@ -1,6 +1,6 @@
 {
   "name": "@kreds/react",
-  "version": "1.0.5",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
