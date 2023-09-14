@@ -1,0 +1,60 @@
+{
+  "name": "@kreds/react",
+  "version": "1.0.5",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/index.css": {
+      "require": "./dist/index.css",
+      "import": "./dist/index.css"
+    },
+    "./index.css": {
+      "require": "./dist/index.css",
+      "import": "./dist/index.css"
+    }
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "test": "jest",
+    "build": "vite build",
+    "lint": "eslint src"
+  },
+  "author": "Mat Sz <contact@matsz.dev>",
+  "license": "BSD-3-Clause-Clear",
+  "private": false,
+  "devDependencies": {
+    "@kreds/client": "^0.0.1",
+    "@kreds/types": "^0.0.1",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "@vitejs/plugin-react": "^4.0.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  },
+  "peerDependencies": {
+    "@kreds/client": "^0.0.1",
+    "@kreds/types": "^0.0.1",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

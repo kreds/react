@@ -1,0 +1,24 @@
+.paragraph {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.error,
+.warning,
+.nfo {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.info {
+  background-color: #7d7d7d;
+}
+
+.warning {
+  background-color: #d28e14;
+}
+
+.error {
+  background-color: #d2141a;
+}

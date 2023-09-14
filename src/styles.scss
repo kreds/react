@@ -1,0 +1,190 @@
+.kreds_modal_wrapper {
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.kreds_modal {
+  background: #343440;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden;
+
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: normal;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  &_body,
+  &_header {
+    padding: 1rem;
+  }
+
+  &_body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &_header {
+    background: #242430;
+  }
+
+  &_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      font-size: 0;
+    }
+  }
+
+  &_close {
+    background: none;
+    border: none;
+
+    svg {
+      height: 0.8rem;
+      fill: white;
+    }
+  }
+}
+
+.kreds_button {
+  background: #3f3f4e;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+
+  &:hover {
+    background: #4f4f62;
+  }
+}
+
+.kreds_paragraph {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+
+  &_error,
+  &_warning,
+  &_info {
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+  }
+
+  &_info {
+    background-color: #7d7d7d;
+  }
+
+  &_warning {
+    background-color: #d28e14;
+  }
+
+  &_error {
+    background-color: #d2141a;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .kreds_modal {
+    width: 500px;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+}
+
+.kreds_loading {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    &:nth-child(1) {
+      left: 8px;
+      animation: kreds_loading1 0.6s infinite;
+    }
+
+    &:nth-child(2) {
+      left: 8px;
+      animation: kreds_loading2 0.6s infinite;
+    }
+
+    &:nth-child(3) {
+      left: 32px;
+      animation: kreds_loading2 0.6s infinite;
+    }
+
+    &:nth-child(4) {
+      left: 56px;
+      animation: kreds_loading3 0.6s infinite;
+    }
+  }
+}
+
+@keyframes kreds_loading1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes kreds_loading3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes kreds_loading2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
