@@ -22,6 +22,7 @@ export default defineConfig(() => ({
         'react/jsx-runtime',
         '@kreds/client',
         '@kreds/types',
+        'clsx',
       ],
     },
   },
