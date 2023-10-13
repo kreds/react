@@ -48,6 +48,19 @@ export const Provider: React.FC<ProviderProps> = ({ client, children }) => {
   };
 
   React.useEffect(() => {
+    if (!isOpen || render) {
+      return;
+    }
+
+    if (strategies.length === 1) {
+      const action = strategies[0].action;
+      if (action?.type === 'redirect') {
+        window.location.href = action.url;
+      }
+    }
+  }, [isOpen, strategies, render]);
+
+  React.useEffect(() => {
     setStrategies(client.strategies);
     setUser(client.user);
 
@@ -61,8 +74,8 @@ export const Provider: React.FC<ProviderProps> = ({ client, children }) => {
     };
 
     const onRender = (render: KredsComponent[]) => {
-      setIsOpen(true);
       setRender(render);
+      setIsOpen(true);
     };
 
     const onError = (error: Error) => {
